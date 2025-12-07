@@ -12,7 +12,7 @@
 6. npm run prisma:seed
 7. npm run dev
 
-API: http://localhost:4001/api
+API: http://localhost:4000/api
 
 ### Frontend
 
