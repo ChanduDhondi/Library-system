@@ -1,8 +1,8 @@
 # Fullstack Library (Express + Prisma + Postgres + React + Tailwind)
 
-## Quickstart (without Docker)
+## Quickstart (without Docker): Follow these steps
 
-### Backend
+## Backend
 
 1. cd backend
 2. cp .env.example .env and edit if needed
@@ -14,7 +14,7 @@
 
 API: http://localhost:4000/api
 
-### Frontend
+## Frontend
 
 1. cd frontend
 2. npm install
@@ -26,7 +26,3 @@ Seeded users:
 
 - admin@example.com / adminpass
 - user@example.com / userpass
-
-## Quickstart (Docker Compose)
-
-Run from repo root:
