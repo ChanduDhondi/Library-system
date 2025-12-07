@@ -25,7 +25,7 @@ export default function Books() {
       const res = await api.get("/books");
       return res.data;
     },
-    staleTime: 1000 * 60 * 60, // 1 hour cache
+    staleTime: 1000 * 5, // 5 sec cache
   });
 
   const { data: authors = [] } = useQuery({
@@ -34,7 +34,7 @@ export default function Books() {
       const res = await api.get("/authors");
       return res.data;
     },
-    staleTime: 1000 * 60 * 60, // 1 hour cache
+    staleTime: 1000 * 5, // 5 sec cache
   });
 
   const createBookMutation = useMutation({

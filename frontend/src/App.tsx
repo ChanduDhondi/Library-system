@@ -4,9 +4,11 @@ import Authors from "./pages/Authors";
 import Books from "./pages/Books";
 import MyBorrowed from "./pages/MyBorrowed";
 import Navbar from "./components/Navbar";
+import { useContext } from "react";
+import AuthContext from "./contexts/authContext";
 
 function PrivateRoute({ children }: any) {
-  const token = localStorage.getItem("token");
+  const { token } = useContext(AuthContext);
   if (!token) return <Navigate to="/login" replace />;
   return children;
 }

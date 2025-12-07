@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/apiClient";
+import { useContext } from "react";
+import AuthContext from "../contexts/authContext";
 
 export default function Login() {
   const [email, setEmail] = useState("admin@example.com");
   const [password, setPassword] = useState("adminpass");
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     try {
       const res = await api.post("/auth/login", { email, password });
-      localStorage.setItem("token", res.data.token);
+      login(res.data.token);
       navigate("/books");
     } catch (err: any) {
       setError(err?.response?.data?.message || "Login failed");
